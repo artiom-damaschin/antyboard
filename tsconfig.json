@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "types": ["react", "jest"],
+        "outDir": "dist/",
+        "sourceMap": true,
+        "strict": true,
+        "noImplicitReturns": true,
+        "noImplicitAny": true,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "target": "es2018",
+        "allowJs": true,
+        "jsx": "react",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true
+    },
+    "files": [
+
+    ],
+    "include": [
+        "src"
+    ]
+}
