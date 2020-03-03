@@ -4,6 +4,7 @@
         "outDir": "dist/",
         "sourceMap": true,
         "strict": true,
+        "strictFunctionTypes": true,
         "noImplicitReturns": true,
         "noImplicitAny": true,
         "module": "commonjs",
@@ -14,10 +15,10 @@
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true
     },
-    "files": [
-
-    ],
     "include": [
         "src"
+    ],
+    "exclude": [
+        "node_modules"
     ]
 }

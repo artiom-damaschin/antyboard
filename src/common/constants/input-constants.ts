@@ -4,6 +4,6 @@ const PLACEHOLDER = {
 }
 
 export {
-  PLACEHOLDER
+  PLACEHOLDER,
 }
 export default null
