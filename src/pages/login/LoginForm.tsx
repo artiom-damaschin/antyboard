@@ -1,4 +1,6 @@
 import React, { FC } from 'react'
+import { navigate, RouteComponentProps } from '@reach/router'
+
 import { Form, Input, Button, Checkbox } from 'antd'
 import styled from 'styled-components'
 
@@ -40,7 +42,7 @@ const StyledFormItem = styled(Form.Item)`
   display: flex;
 `
 
-const LoginForm: FC = () => (
+const LoginForm: FC<RouteComponentProps> = () => (
   <StyledContainer>
     <StyledForm name="basic" initialValues={{ remember: true }}>
       <Form.Item
@@ -59,7 +61,11 @@ const LoginForm: FC = () => (
 
       <StyledFormItem name="remember" valuePropName="checked">
         <StyledCheckbox>Remember me</StyledCheckbox>
-        <StyledButton type="primary" htmlType="submit">
+        <StyledButton
+          type="primary"
+          htmlType="submit"
+          onClick={() => navigate('/dashboard')}
+        >
           SIGN IN
         </StyledButton>
       </StyledFormItem>

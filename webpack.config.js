@@ -49,6 +49,7 @@ const config = {
   },
   devServer: {
     contentBase: './dist',
+    historyApiFallback: true,
   },
   plugins: [new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/)],
 }
