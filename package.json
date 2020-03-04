@@ -61,7 +61,6 @@
     "tslint-react": "4.0.0",
     "tslint-react-hooks": "2.2.1",
     "typescript": "^3.8.2",
-    "typescript-plugin-styled-components": "1.4.3",
     "url-loader": "^3.0.0",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11",

@@ -3,7 +3,5 @@ const PLACEHOLDER = {
   PASSWORD: 'Password',
 }
 
-export {
-  PLACEHOLDER,
-}
+export { PLACEHOLDER }
 export default null
