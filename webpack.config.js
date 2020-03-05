@@ -8,6 +8,7 @@ const config = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
   },
+  devtool: 'eval-source-map',
   module: {
     rules: [
       {
@@ -48,8 +49,10 @@ const config = {
     },
   },
   devServer: {
-    contentBase: './dist',
+    contentBase: [path.join(__dirname, 'dist'), path.join(__dirname, 'assets')],
+    compress: true,
     historyApiFallback: true,
+    port: 3000,
   },
   plugins: [new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/)],
 }

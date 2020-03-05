@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Button } from 'antd'
-import { MenuUnfoldOutlined } from '@ant-design/icons'
 
 import NotificationBar from './NotificationBar'
 
@@ -14,19 +13,8 @@ const Logo = styled.div`
   display: inline-block;
 `
 
-const StyledMenuUnfold = styled(MenuUnfoldOutlined)`
-  color: #666666;
-  font-size: 40px;
-
-  &:hover {
-    color: white;
-    border-color: white;
-  }
-`
-
 const Navigator = () => (
   <>
-    <StyledMenuUnfold />
     <Logo>LOGO</Logo>
     <NotificationBar />
     <Button type="primary">Logout</Button>

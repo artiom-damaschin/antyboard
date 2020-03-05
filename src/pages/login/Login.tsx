@@ -5,7 +5,7 @@ import LoginForm from './LoginForm'
 
 const Login: FC<RouteComponentProps> = () => (
   <Router>
-    <LoginForm path="/" />
+    <LoginForm path="/auth" />
   </Router>
 )
 

@@ -2,8 +2,8 @@ import React from 'react'
 import { hot } from 'react-hot-loader/root'
 import { Layout } from 'antd'
 
-import Header from './common/components/header/Header'
-import Content from './common/components/content/Content'
+import Header from './core/components/header/Header'
+import Content from './core/components/content/Content'
 import { Login } from './pages'
 
 function App() {

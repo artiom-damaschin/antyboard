@@ -1,12 +1,14 @@
 import React, { FC } from 'react'
-import Sidebar from './components/sidebar/Sidebar'
 import { Layout } from 'antd'
 import { Router, RouteComponentProps } from '@reach/router'
-import { Dashboard } from '../../../pages'
+
+import { Dashboard } from '../../../pages/index'
+
+import Sidebar from './components/sidebar/Sidebar'
 
 const Content: FC<RouteComponentProps> = () => {
   return (
-    <Layout>
+    <Layout hasSider>
       <Sidebar />
       <Layout.Content>
         <Router>

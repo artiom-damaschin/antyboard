@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import { Layout } from 'antd'
 import styled from 'styled-components'
 
-import { Navigator } from './components'
+import { Navigator } from './components/index'
 
 const StyledHeader = styled(Layout.Header)`
   display: flex;
