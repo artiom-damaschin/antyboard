@@ -1,15 +1,20 @@
 import React from 'react'
-import { Router } from '@reach/router'
 import { hot } from 'react-hot-loader/root'
+import { Layout } from 'antd'
 
-import { LoginForm, Dashboard } from './pages'
+import Header from './common/components/header/Header'
+import Content from './common/components/content/Content'
+import { Login } from './pages'
 
 function App() {
   return (
-    <Router>
-      <LoginForm path="/" />
-      <Dashboard path="/dashboard" />
-    </Router>
+    <>
+      <Login />
+      <Layout>
+        <Header />
+        <Content />
+      </Layout>
+    </>
   )
 }
 

@@ -1,19 +1,14 @@
 import React, { FC } from 'react'
-
 import styled from 'styled-components'
 import { Layout, Avatar } from 'antd'
 
-import UserAvatar from '../../../assets/img/ui-sam.jpg'
-import SidebarMenu from './SidebarMenu'
+import UserAvatar from '../../../../../assets/img/ui-sam.jpg'
 
-const { Sider } = Layout
+import { SidebarMenu } from './components'
 
-const StyledSider = styled(Sider)`
+const StyledSider = styled(Layout.Sider)`
   background: #2f323a;
-  overflow: auto;
   height: 100vh;
-  position: fixed;
-  left: 0;
 `
 
 const StyledAvatar = styled(Avatar)`
@@ -21,12 +16,11 @@ const StyledAvatar = styled(Avatar)`
   height: 8em;
 `
 const StyledContainer = styled.div`
-  position: absolute;
-  top: 8%;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 3em;
 `
 const UserName = styled.span`
   font-size: 21px;

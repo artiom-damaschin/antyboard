@@ -1,5 +1,4 @@
-export { default as LoginForm } from './login/LoginForm'
-
+export { default as Login } from './login/Login'
 export { default as Dashboard } from './dashboard/Dashboard'
 
 export default null

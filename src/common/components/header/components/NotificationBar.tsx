@@ -1,16 +1,16 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
-
 import {
   ProfileOutlined,
   BellOutlined,
   MessageOutlined,
 } from '@ant-design/icons'
-import NotificationItem from '../../../common/components/NotificationItem'
+
+import NotificationItem from './NotificationItem'
 
 const NotificationItems = styled.div`
   width: 100%;
-  margin-left: 6em;
+  margin-left: 13em;
 `
 
 const NotificationBar: FC = () => (
