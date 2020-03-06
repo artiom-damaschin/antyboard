@@ -12,6 +12,7 @@ const StyledName = styled.span`
   font-size: 21px;
   font-weight: 500;
   color: #f2f2f2;
+  min-width: 105px;
 `
 
 const SidebarAvatar: FC = () => {

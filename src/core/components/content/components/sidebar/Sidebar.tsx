@@ -24,21 +24,13 @@ const StyledSider = styled(Layout.Sider)`
   }
 `
 
-const StyledAvatar = styled(Avatar)`
-  width: 8em;
-  height: 8em;
-`
 const StyledContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 3em;
-`
-const UserName = styled.span`
-  font-size: 21px;
-  font-weight: 500;
-  color: #f2f2f2;
+  overflow: hidden;
 `
 
 const Sidebar: FC = () => {
