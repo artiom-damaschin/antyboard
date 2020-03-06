@@ -1,8 +1,10 @@
 import React, { FC } from 'react'
-import { Layout } from 'antd'
+import { Button, Layout } from 'antd'
 import styled from 'styled-components'
 
-import { Navigator } from './components/index'
+import AppLogo from '../../../assets/img/logo.png'
+
+import NotificationBar from './components/NotificationBar'
 
 const StyledHeader = styled(Layout.Header)`
   display: flex;
@@ -21,11 +23,23 @@ const StyledHeader = styled(Layout.Header)`
     }
   }
 `
+const Logo = styled.div`
+  height: 50px;
+  width: 100px;
+  background-image: url(${AppLogo});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 80px 77px;
+  display: inline-block;
+  margin-left: 5em;
+`
 
 const Header: FC = () => {
   return (
     <StyledHeader>
-      <Navigator />
+      <Logo />
+      <NotificationBar />
+      <Button type="primary">Logout</Button>
     </StyledHeader>
   )
 }

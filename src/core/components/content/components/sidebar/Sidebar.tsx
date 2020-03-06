@@ -13,7 +13,7 @@ const StyledSider = styled(Layout.Sider)`
     font-size: 40px;
     position: absolute;
     height: 60px;
-    top: -69px;
+    top: -79px;
     left: 15px;
     background: #22242a;
     &:hover {
