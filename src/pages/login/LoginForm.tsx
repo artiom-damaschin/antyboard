@@ -1,11 +1,11 @@
 import React, { FC } from 'react'
-import { navigate, RouteComponentProps } from '@reach/router'
-
 import { Form, Input, Button, Checkbox } from 'antd'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 import LoginBg from '../../assets/img/login-bg.png'
 import { PLACEHOLDER } from '../../common/constants/input-constants'
+import { useAuth } from '../../common/context/auth-сontext'
 
 const { USER_ID, PASSWORD } = PLACEHOLDER
 
@@ -42,35 +42,34 @@ const StyledFormItem = styled(Form.Item)`
   display: flex;
 `
 
-const LoginForm: FC<RouteComponentProps> = () => (
-  <StyledContainer>
-    <StyledForm name="basic" initialValues={{ remember: true }}>
-      <Form.Item
-        name="username"
-        rules={[{ required: true, message: 'Please input your username!' }]}
-      >
-        <StyledInput placeholder={USER_ID} />
-      </Form.Item>
-
-      <Form.Item
-        name="password"
-        rules={[{ required: true, message: 'Please input your password!' }]}
-      >
-        <StyledInput type="password" placeholder={PASSWORD} />
-      </Form.Item>
-
-      <StyledFormItem name="remember" valuePropName="checked">
-        <StyledCheckbox>Remember me</StyledCheckbox>
-        <StyledButton
-          type="primary"
-          htmlType="submit"
-          onClick={() => navigate('/dashboard')}
+const LoginForm: FC = () => {
+  const { login } = useAuth()
+  return (
+    <StyledContainer>
+      <StyledForm name="basic" initialValues={{ remember: true }}>
+        <Form.Item
+          name="username"
+          rules={[{ required: true, message: 'Please input your username!' }]}
         >
-          SIGN IN
-        </StyledButton>
-      </StyledFormItem>
-    </StyledForm>
-  </StyledContainer>
-)
+          <StyledInput placeholder={USER_ID} />
+        </Form.Item>
+
+        <Form.Item
+          name="password"
+          rules={[{ required: true, message: 'Please input your password!' }]}
+        >
+          <StyledInput type="password" placeholder={PASSWORD} />
+        </Form.Item>
+
+        <StyledFormItem name="remember" valuePropName="checked">
+          <StyledCheckbox>Remember me</StyledCheckbox>
+          <StyledButton type="primary" htmlType="submit" onClick={login}>
+            SIGN IN
+          </StyledButton>
+        </StyledFormItem>
+      </StyledForm>
+    </StyledContainer>
+  )
+}
 
 export default LoginForm

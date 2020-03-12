@@ -1,9 +1,8 @@
 import React, { FC } from 'react'
-import { RouteComponentProps } from '@reach/router'
 
 import { VisitsBarChart, ChartsGroup } from './components'
 
-const Dashboard: FC<RouteComponentProps> = () => {
+const Dashboard: FC = () => {
   return (
     <>
       <VisitsBarChart />

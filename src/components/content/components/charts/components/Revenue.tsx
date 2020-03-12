@@ -1,9 +1,9 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
 
-import { TinyLineChart } from '../../../../../../common/components/charts'
-import { ServerPanel } from '../../../../../../common/components/panels'
-import { REVENUE_PANEL } from '../constants'
+import { TinyLineChart } from '../../../../../common/components/charts/index'
+import { ServerPanel } from '../../../../../common/components/panels/index'
+import { REVENUE_PANEL } from '../constants/index'
 
 const data = [
   {

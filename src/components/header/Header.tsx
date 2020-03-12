@@ -2,7 +2,8 @@ import React, { FC } from 'react'
 import { Button, Layout } from 'antd'
 import styled from 'styled-components'
 
-import AppLogo from '../../../assets/img/logo.png'
+import AppLogo from '../../assets/img/logo.png'
+import { useAuth } from '../../common/context/auth-сontext'
 
 import NotificationBar from './components/NotificationBar'
 
@@ -35,11 +36,15 @@ const Logo = styled.div`
 `
 
 const Header: FC = () => {
+  const { logout } = useAuth()
+
   return (
     <StyledHeader>
       <Logo />
       <NotificationBar />
-      <Button type="primary">Logout</Button>
+      <Button type="primary" onClick={logout}>
+        Logout
+      </Button>
     </StyledHeader>
   )
 }

@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import styled from 'styled-components'
 import { Avatar } from 'antd'
 
-import UserAvatar from '../../../../../../assets/img/ui-sam.jpg'
+import UserAvatar from '../../../../../assets/img/ui-sam.jpg'
 
 const StyledAvatar = styled(Avatar)`
   width: 8em;

@@ -5,7 +5,13 @@ import 'sanitize.css'
 import 'antd/dist/antd.css'
 
 import App from './App'
+import AppProviders from './common/context'
 
 const mountNode = document.getElementById('app')
 
-ReactDOM.render(<App />, mountNode)
+ReactDOM.render(
+  <AppProviders>
+    <App />
+  </AppProviders>,
+  mountNode,
+)

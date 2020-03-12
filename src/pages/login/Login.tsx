@@ -1,12 +1,7 @@
 import React, { FC } from 'react'
-import { Router, RouteComponentProps } from '@reach/router'
 
 import LoginForm from './LoginForm'
 
-const Login: FC<RouteComponentProps> = () => (
-  <Router>
-    <LoginForm path="/login" />
-  </Router>
-)
+const Login: FC = () => <LoginForm />
 
 export default Login

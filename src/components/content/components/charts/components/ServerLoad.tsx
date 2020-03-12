@@ -1,9 +1,9 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
 
-import { DoughnutChart } from '../../../../../../common/components/charts'
-import { ServerPanel } from '../../../../../../common/components/panels'
-import { SERVER_LOAD_PANEL } from '../constants'
+import { DoughnutChart } from '../../../../../common/components/charts/index'
+import { ServerPanel } from '../../../../../common/components/panels/index'
+import { SERVER_LOAD_PANEL } from '../constants/index'
 
 const { TITLE, DESCRIPTION } = SERVER_LOAD_PANEL
 

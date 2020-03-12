@@ -1,8 +1,8 @@
 import React, { FC, useState } from 'react'
 import styled from 'styled-components'
-import { Layout, Avatar } from 'antd'
+import { Layout } from 'antd'
 
-import { SidebarMenu, SidebarAvatar } from './components'
+import { SidebarMenu, SidebarAvatar } from './components/index'
 
 const StyledSider = styled(Layout.Sider)`
   background: #2f323a;

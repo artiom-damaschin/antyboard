@@ -5,7 +5,7 @@ import {
   DropBoxStatics,
   Revenue,
   ServerLoad,
-} from '../../../core/components/content/components/charts/components'
+} from '../../../components/content/components/charts/components'
 
 const StyledGroup = styled.div`
   display: flex;
