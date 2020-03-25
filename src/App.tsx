@@ -1,4 +1,4 @@
-import React, { Suspense, memo } from 'react'
+import React, { Suspense } from 'react'
 import { hot } from 'react-hot-loader/root'
 import { Layout } from 'antd'
 
@@ -25,4 +25,4 @@ function App() {
   )
 }
 
-export default hot(memo(App))
+export default hot(App)

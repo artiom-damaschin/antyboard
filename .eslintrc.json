@@ -3,22 +3,46 @@
     "browser": true,
     "node": true
   },
+  "parser": "@typescript-eslint/parser",
   "extends": [
     "airbnb",
     "prettier",
+    "prettier/react",
     "plugin:prettier/recommended",
     "plugin:import/errors",
-    "plugin:import/warnings"
+    "plugin:import/warnings",
+    "plugin:@typescript-eslint/recommended"
   ],
-  "plugins": ["react-hooks", "prettier", "import"],
+  "plugins": [
+    "@typescript-eslint/eslint-plugin",
+    "react",
+    "react-hooks",
+    "prettier",
+    "import"
+    ],
   "rules": {
-    "import/extensions": [0,"never", {"ts": "never"}],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "import/extensions": [0,"never", {"ts": "never", " tsx": "never"}],
     "import/no-unresolved": 0,
     "semi": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "react/prop-types": 0,
-    "prettier/prettier": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        "arrowParens": "avoid",
+        "bracketSpacing": true,
+        "endOfLine": "auto",
+        "jsxSingleQuote": false,
+        "htmlWhitespaceSensitivity": "css",
+        "proseWrap": "preserve",
+        "semi": false,
+        "singleQuote": true,
+        "trailingComma": "all",
+        "useTabs": false
+      }
+    ],
     "react/jsx-filename-extension": [0],
     "import/order": [
       "error",
@@ -45,11 +69,5 @@
     "import/parsers": {
       "@typescript-eslint/parser": [".ts", ".tsx"]
     }
-  },
-  "parser": "babel-eslint",
-  "parserOptions": {
-    "typescript": true,
-    "sourceType": "module",
-    "allowImportExportEverywhere": true
   }
 }
