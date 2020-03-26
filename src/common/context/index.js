@@ -1,11 +1,12 @@
 import React from 'react'
 
 import { AuthProvider } from './auth-сontext'
+import { StyleProvider } from './style-context'
 
-// type AppProvidersProps = {
-//   children: React.ReactNode
-// }
-// const AppProviders = ({ children }: AppProvidersProps) => (
-const AppProviders = ({ children }) => <AuthProvider>{children}</AuthProvider>
+const AppProviders = ({ children }) => (
+  <AuthProvider>
+    <StyleProvider>{children}</StyleProvider>
+  </AuthProvider>
+)
 
 export default AppProviders

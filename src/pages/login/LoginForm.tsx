@@ -1,11 +1,20 @@
 import React, { FC } from 'react'
-import { Form, Input, Button, Checkbox } from 'antd'
+import { Form, Button, Checkbox } from 'antd'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+import {
+  width,
+  typography,
+  height,
+  WidthProps,
+  TypographyProps,
+  HeightProps,
+} from 'styled-system'
 
 import LoginBg from '../../assets/img/login-bg.png'
 import { PLACEHOLDER } from '../../common/constants/input-constants'
 import { useAuth } from '../../common/context/auth-сontext'
+
+import { LoginInput } from './components'
 
 const { USER_ID, PASSWORD } = PLACEHOLDER
 
@@ -15,58 +24,69 @@ const StyledContainer = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
 `
 
-const StyledForm = styled(Form)`
+const StyledForm = styled(Form)<WidthProps>`
+  ${width}
   display: flex;
   flex-direction: column;
-  width: 20em;
-  height: 15em;
   margin: auto;
-  border-radius: 7px;
 `
 
-const StyledInput = styled(Input)`
-  width: 100%;
-`
-const StyledButton = styled(Button)`
-  float: right;
+const StyledButton = styled(Button)<TypographyProps & HeightProps>`
+  ${typography}
+  ${height}
 `
 const StyledCheckbox = styled(Checkbox)`
   color: darkgrey;
-  vertical-align: central;
-`
-const StyledFormItem = styled(Form.Item)`
-  display: flex;
+  span:first-of-type {
+    font-size: 20px;
+    height: 20px;
+    width: 20px;
+  }
+  span:last-of-type {
+    font-size: 20px;
+  }
 `
 
 const LoginForm: FC = () => {
   const { login } = useAuth()
   return (
     <StyledContainer>
-      <StyledForm name="basic" initialValues={{ remember: true }}>
+      <StyledForm
+        width={[400, 350]}
+        name="basic"
+        initialValues={{ remember: true }}
+      >
         <Form.Item
           name="username"
           rules={[{ required: true, message: 'Please input your username!' }]}
         >
-          <StyledInput placeholder={USER_ID} />
+          <LoginInput fontSize={[4, 3]} placeholder={USER_ID} />
         </Form.Item>
-
         <Form.Item
           name="password"
           rules={[{ required: true, message: 'Please input your password!' }]}
         >
-          <StyledInput type="password" placeholder={PASSWORD} />
+          <LoginInput
+            fontSize={[4, 3]}
+            type="password"
+            placeholder={PASSWORD}
+          />
         </Form.Item>
-
-        <StyledFormItem name="remember" valuePropName="checked">
-          <StyledCheckbox>Remember me</StyledCheckbox>
-          <StyledButton type="primary" htmlType="submit" onClick={login}>
-            SIGN IN
-          </StyledButton>
-        </StyledFormItem>
+        <StyledCheckbox>Remember me</StyledCheckbox>
+        <StyledButton
+          block
+          height={[41]}
+          fontSize={[3, 2]}
+          type="primary"
+          htmlType="submit"
+          onClick={login}
+        >
+          SIGN IN
+        </StyledButton>
       </StyledForm>
     </StyledContainer>
   )
