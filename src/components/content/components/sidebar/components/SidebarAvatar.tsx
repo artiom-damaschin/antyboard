@@ -19,6 +19,7 @@ const StyledAvatar = styled(Avatar)<HeightProps & WidthProps>(
 const StyledName = styled.span<TypographyProps>`
   ${typography}
   color: #f2f2f2;
+  min-width: 100px;
 `
 
 const SidebarAvatar: FC = () => {

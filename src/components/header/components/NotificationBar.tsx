@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
+import { opacity, margin, OpacityProps, MarginProps } from 'styled-system'
 import {
   ProfileOutlined,
   BellOutlined,
@@ -8,13 +9,14 @@ import {
 
 import NotificationItem from './NotificationItem'
 
-const NotificationItems = styled.div`
+const NotificationItems = styled.div<MarginProps & OpacityProps>`
+  ${margin}
+  ${opacity}
   width: 100%;
-  margin-left: 13em;
 `
 
 const NotificationBar: FC = () => (
-  <NotificationItems>
+  <NotificationItems opacity={[0, 1]} ml={[null, '5em', '10em']}>
     <NotificationItem notifications={4}>
       <ProfileOutlined />
     </NotificationItem>
