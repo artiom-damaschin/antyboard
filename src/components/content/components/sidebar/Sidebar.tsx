@@ -1,8 +1,8 @@
 import React, { FC, useState } from 'react'
-import styled from 'styled-components'
 import { Layout } from 'antd'
+import styled from 'styled-components'
 
-import { SidebarMenu, SidebarAvatar } from './components/index'
+import { SidebarMenu, SidebarAvatar } from './components'
 
 const StyledSider = styled(Layout.Sider)`
   background: #2f323a;
@@ -25,7 +25,6 @@ const StyledSider = styled(Layout.Sider)`
 `
 
 const StyledContainer = styled.div`
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,19 +34,25 @@ const StyledContainer = styled.div`
 
 const Sidebar: FC = () => {
   const [isCollapsed, setCollapsed] = useState(false)
-
+  const [isSmallSider, setSiderSize] = useState('100%')
   const handleToggle = () => {
     setCollapsed(!isCollapsed)
   }
 
+  const handleSiderSize = (broken: boolean) => {
+    setSiderSize(broken ? '100%' : '30%')
+  }
+
   return (
     <StyledSider
-      width="30%"
+      width={isSmallSider}
       collapsible
       defaultCollapsed={false}
       collapsed={isCollapsed}
       collapsedWidth={0}
       onCollapse={handleToggle}
+      breakpoint="md"
+      onBreakpoint={handleSiderSize}
     >
       <StyledContainer>
         <SidebarAvatar />

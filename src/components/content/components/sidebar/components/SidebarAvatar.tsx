@@ -1,25 +1,37 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
+import {
+  compose,
+  typography,
+  height,
+  width,
+  TypographyProps,
+  HeightProps,
+  WidthProps,
+} from 'styled-system'
 import { Avatar } from 'antd'
 
 import UserAvatar from '../../../../../assets/img/ui-sam.jpg'
 
-const StyledAvatar = styled(Avatar)`
-  width: 8em;
-  height: 8em;
-`
-const StyledName = styled.span`
-  font-size: 21px;
-  font-weight: 500;
+const StyledAvatar = styled(Avatar)<HeightProps & WidthProps>(
+  compose(height, width),
+)
+const StyledName = styled.span<TypographyProps>`
+  ${typography}
   color: #f2f2f2;
-  min-width: 105px;
 `
 
 const SidebarAvatar: FC = () => {
   return (
     <>
-      <StyledAvatar src={UserAvatar} />
-      <StyledName>Sam Saffes</StyledName>
+      <StyledAvatar
+        height={['12em', '8em']}
+        width={['12em', '8em']}
+        src={UserAvatar}
+      />
+      <StyledName fontSize={[5, 3]} fontWeight={[400, 500]}>
+        Sam Saffes
+      </StyledName>
     </>
   )
 }
