@@ -1,6 +1,18 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
+import { width, WidthProps } from 'styled-system'
 import { darken } from 'polished'
+
+const StyledChart = styled.div<WidthProps & { color: string }>`
+  ${width}
+  min-width: 200px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: center;
+  background: ${props => props.color};
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
+`
 
 const ChartHeader = styled.span<{ color: string }>`
   padding: 5% 0;
@@ -12,16 +24,6 @@ const ChartHeader = styled.span<{ color: string }>`
   background-color: ${props => darken(0.1, props.color)};
 `
 
-const StyledChart = styled.div<{ color: string }>`
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: space-between;
-  align-items: center;
-  background: ${props => props.color};
-  flex-basis: 30%;
-  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
-`
-
 type Props = {
   title: string
   color: string
@@ -30,7 +32,7 @@ type Props = {
 
 const ServerPanel: FC<Props> = ({ children, title, color }) => {
   return (
-    <StyledChart color={color}>
+    <StyledChart color={color} width={['90%']}>
       <ChartHeader color={color}>{title}</ChartHeader>
       {children}
     </StyledChart>

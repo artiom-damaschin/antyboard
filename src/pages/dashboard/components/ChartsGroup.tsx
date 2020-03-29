@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
+import { flexbox, FlexboxProps } from 'styled-system'
 
 import {
   DropBoxStatics,
@@ -7,15 +8,18 @@ import {
   ServerLoad,
 } from '../../../components/content/components/charts/components'
 
-const StyledGroup = styled.div`
+const StyledGroup = styled.div<FlexboxProps>`
+  ${flexbox}
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-around;
   margin-top: 2em;
 `
 const ChartsGroup: FC = () => {
   return (
-    <StyledGroup>
+    <StyledGroup
+      flexDirection={['column', 'row']}
+      flexWrap="nowrap"
+      alignItems="center"
+    >
       <ServerLoad />
       <DropBoxStatics />
       <Revenue />

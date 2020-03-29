@@ -1,2 +1,3 @@
 export { default as ChartsGroup } from './ChartsGroup'
-export { default as VisitsBarChart } from './VisitsBarChart'
+
+export default null

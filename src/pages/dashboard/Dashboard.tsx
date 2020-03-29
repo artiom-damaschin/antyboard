@@ -1,11 +1,10 @@
 import React, { FC } from 'react'
 
-import { VisitsBarChart, ChartsGroup } from './components'
+import { ChartsGroup } from './components'
 
 const Dashboard: FC = () => {
   return (
     <>
-      <VisitsBarChart />
       <ChartsGroup />
     </>
   )
